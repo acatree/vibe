@@ -14,12 +14,16 @@ TOKEN_SPEC = [
     ('SKIP', r'[ \t]+'),
 ]
 
-token_regex = '|'.join('(?P<%s>%s)' % pair for pair in TOKEN_SPEC)
+class Lexer:
+    def __init__(self):
+        self.token_regex = '|'.join(f'(?P<{name}>{pattern})' for name, pattern in TOKEN_SPEC)
 
-def tokenize(code):
-    for mo in re.finditer(token_regex, code):
-        kind = mo.lastgroup
-        value = mo.group()
-        if kind == 'SKIP' or kind == 'NEWLINE':
-            continue
-        yield (kind, value.strip('"'))
+    def tokenize(self, code):
+        tokens = []
+        for mo in re.finditer(self.token_regex, code):
+            kind = mo.lastgroup
+            value = mo.group()
+            if kind in ('SKIP', 'NEWLINE'):
+                continue
+            tokens.append((kind, value))
+        return tokens
