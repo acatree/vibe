@@ -31,6 +31,12 @@ To use `vibe` as a **global CLI command:**
 ```bash
 pip install .
 ```
+or
+```bash
+pip install --upgrade build
+python -m build
+pip install dist/vibe_dsl-0.1.0-py3-none-any.whl
+```
 
 ## 🔧 How to Run
 
