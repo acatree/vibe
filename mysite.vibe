@@ -1,9 +1,6 @@
 Page "My First Site" {
-    Section "Hero" {
-        Title: "Welcome to Vibe!"
-        Button: "Get Started" -> "/start"
-    }
-    Section "Features" {
-        List: ["Fast", "AI-Powered", "No Code"]
+    Section "Welcome" {
+        "text": "Hello World"
+        "dummy": "Test"
     }
 }

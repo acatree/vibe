@@ -1,12 +1,16 @@
-# vibe/cli.py
-
+# vibe/cli.py..X
 import click
 from .build import build
 
-@click.command()
+@click.group()
+def cli():
+    pass
+
+@cli.command(name='build')
 @click.argument('filepath')
-def build_command(filepath):
+def build_cmd(filepath):
+    """Build a Vibe file into HTML."""
     build(filepath)
 
 if __name__ == '__main__':
-    build_command()
+    cli()
