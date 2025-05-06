@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "vibe-dsl"
 version = "0.1.0"
 description = "AI-Enhanced Web DSL"
-authors = [{ name="Your Name", email="you@example.com" }]
+authors = [{ name="acatree", email="academictree.kr@gmail.com" }]
 readme = "README.md"
 license = { text = "MIT" }
 dependencies = [
